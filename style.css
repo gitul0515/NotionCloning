@@ -1,0 +1,300 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+button {
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+#app {
+}
+
+#app {
+  display: flex;
+}
+
+.documents {
+  width: 300px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: #f7f6f3;
+  padding: 20px;
+  padding-left: 0;
+  transition: 0.3s;
+}
+
+.documents.to-left {
+  left: -300px;
+}
+
+.documents__header {
+  padding-left: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__anchor {
+  display: flex;
+  align-items: center;
+}
+
+.header__logo {
+  display: block;
+  width: 28px;
+  height: 28px;
+  margin-right: 10px;
+  transform: translateY(2px);
+}
+
+.header__title {
+  font-size: 1.3rem;
+}
+
+.documents__list {
+  padding-left: 20px;
+  list-style-type: none;
+  margin: 7px 0;
+}
+
+.documents__item {
+  margin-bottom: 6px;
+  position: relative;
+  padding: 1px 2px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.documents__item:hover {
+  background-color: #e8e7e4;
+}
+
+.item__title {
+  font-size: 1rem;
+  pointer-events: none;
+  font-weight: 400;
+  width: 170px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.item__btn {
+  padding: 2px;
+  font-size: 1rem;
+}
+
+.item__btn--accordion {
+  padding: 0 3px;
+  transition: 0.5s;
+  margin-right: 2px;
+}
+
+.item__btn--accordion:hover {
+  transform: rotate(90deg);
+}
+
+.fa-solid {
+  pointer-events: none;
+}
+
+.fa-caret-right {
+  transform: translateY(2px);
+}
+
+.fa-note-sticky {
+  font-size: 12px;
+  padding: 0 3px;
+  pointer-events: none;
+  transform: translateY(2px);
+  margin-right: 2px;
+}
+
+.item__btn--delete {
+  font-size: 0.8rem;
+  color: rgb(97, 106, 114);
+  position: absolute;
+  right: 24px;
+  top: 4px;
+}
+
+.item__btn--add {
+  position: absolute;
+  right: 2px;
+  top: 3px;
+}
+
+.fa-plus {
+  color: rgb(132, 144, 155);
+}
+
+.documents__btn--add-root {
+  font-size: 16px;
+  display: block;
+  margin: 16px auto;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.documents__btn--add-root:hover {
+  background-color: #e8e7e4;
+}
+
+.documents__toggle-btn {
+  position: absolute;
+  padding: 5px;
+  font-size: 1.1rem;
+  color: rgb(97, 106, 114);
+  top: 25px;
+  right: 25px;
+  transition: 0.3s;
+}
+
+.documents__toggle-btn.toggled {
+  right: -32px;
+}
+
+.documents__toggle-btn:hover {
+  background-color: #e8e7e4;
+}
+
+.fa-angles-left,
+.fa-angles-right {
+  pointer-events: none;
+}
+
+.title-page {
+  width: 100%;
+  text-align: center;
+  padding-top: 150px;
+  margin-left: 300px;
+  transition: 0.3s;
+  display: none;
+}
+
+.title-page.show {
+  display: block;
+}
+
+.title-page.to-left {
+  margin-left: 0;
+}
+
+.title-page__title {
+  margin-bottom: 70px;
+}
+
+.title-page__title > h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.title-page__title > h2 {
+  margin-bottom: 16px;
+}
+
+.document-editor {
+  width: 100%;
+  min-height: 100vh;
+  margin-left: 300px;
+  transition: 0.3s;
+  display: none;
+}
+
+.document-editor.show {
+  display: block;
+}
+
+.document-editor.to-left {
+  margin-left: 0;
+}
+
+.document-editor__container {
+  width: 65vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  position: relative;
+}
+
+.document-editor__container::after {
+  content: '';
+  display: block;
+  background: url(./asset/image/pin-img.png) no-repeat center center;
+  background-size: contain;
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: -90px;
+  right: -70px;
+  transform: rotate(15deg);
+}
+
+.document-editor__title {
+  outline: none;
+  border: 0;
+  border-bottom: 3px solid rgb(151, 154, 172);
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 12px;
+  background-color: #f1f1ee;
+  box-shadow: 0px 6px 7px -1px rgba(0, 0, 0, 0.5);
+}
+
+.document-editor__content {
+  min-height: 70vh;
+  border: 0;
+  outline: none;
+  padding: 12px;
+  background-color: #f1f1ee;
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.3);
+}
+
+.sub-document__list {
+}
+
+.sub-document__item {
+  font-size: 1rem;
+  width: 170px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.sub-document__item:hover {
+  font-weight: bold;
+}
